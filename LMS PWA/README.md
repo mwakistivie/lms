@@ -11,7 +11,7 @@
 Upload this whole folder to any HTTPS static host (Netlify Drop, Vercel, Cloudflare Pages, GitHub Pages). HTTPS is required for the camera.
 
 ## 3. First run on each phone
-1. Open the site, go to **Sync**, paste the web app URL and PIN, save.
+1. Before uploading, open `index.html` and paste your web app URL into `BACKEND_URL` near the top of the script. Then open the site, go to **Sync**, enter the PIN and save.
 2. Android Chrome: menu > Install app. iPhone Safari: Share > Add to Home Screen (required so data is not evicted).
 3. Catalog > Scan an ISBN. Print labels, stick them on copies, then Check-out and Check-in.
 
@@ -20,3 +20,7 @@ Add rows to **books**, **copies** or **members** (teachers are members with type
 
 ## Not included yet
 Staff logins and roles (one shared PIN for now), renewals, reservations, fines, reports and exports, cover/shelf AI, public catalog. See the PRD phases.
+
+## Upgrading from the first version
+1. Replace `Code.gs` in Apps Script, run `setup` again (adds the **shelves** tab and new columns, keeps your data), then Deploy > Manage deployments > Edit > New version.
+2. Re-upload the app files (keep your `BACKEND_URL`). Phones update on the next online open.
